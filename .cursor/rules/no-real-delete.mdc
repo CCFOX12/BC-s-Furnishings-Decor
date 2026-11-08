@@ -1,0 +1,27 @@
+---
+description: 禁止真实删除；把文件挪到已删除文件，让项目读不到
+alwaysApply: true
+---
+
+# 禁止真实删除
+
+永远不要执行真实删除。不要使用 Delete 工具，也不要运行 `Remove-Item`、`rm`、`del`、`rd`、`rmdir`、`unlink`、`git clean`、`git rm`（会删工作区文件）。
+
+需要让项目“读不到”某个文件或目录时：
+
+1. 使用该工作区根目录下的 `已删除文件/`（没有就创建）。
+2. 用**移动**保留相对路径：`已删除文件/<原相对路径>`。
+3. 目标已存在时，在文件名后追加 `yyyyMMdd-HHmmss` 再移动。
+4. 移动后确认原路径已不存在。`已删除文件/` 已被 `.cursorignore` 忽略，不要去读里面的内容。
+
+```powershell
+$root = "<workspace-root>"
+$src = "<absolute-path>"
+$rel = $src.Substring($root.Length).TrimStart('\')
+$dest = Join-Path (Join-Path $root "已删除文件") $rel
+New-Item -ItemType Directory -Force -Path (Split-Path $dest) | Out-Null
+if (Test-Path -LiteralPath $dest) { $dest = "$dest." + (Get-Date -Format "yyyyMMdd-HHmmss") }
+Move-Item -LiteralPath $src -Destination $dest
+```
+
+例外：Gradle 清理构建目录 `build/` 可以。不要清空 `已删除文件`。不要删除正在运行的游戏世界文件。

@@ -1,0 +1,11 @@
+---
+description: 只把本文件夹推到指定 GitHub；提交不要把 Cursor 列为共创
+alwaysApply: true
+---
+
+# GitHub 推送
+
+- Git 仓库根就是本文件夹 `BC's Furnishings & Decor`，不要把 `Working Directory` 里其它工程加进来。
+- 远程只有：https://github.com/CCFOX12/BC-s-Furnishings-Decor
+- 提交说明不要写 `Co-authored-by: Cursor`、`cursoragent` 或任何把 Cursor 列为共创的 trailer。
+- 不要推 `已删除文件/`。构建产物（`build/`、`.gradle/`）也不要进库。

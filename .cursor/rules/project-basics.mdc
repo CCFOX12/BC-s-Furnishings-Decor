@@ -1,0 +1,24 @@
+---
+description: 本模组的版本、定位和入口，下一轮对话直接按这个开工
+alwaysApply: true
+---
+
+# BC's Furnishings & Decor
+
+独立 Fabric 内容模组，和工作区里其它文件夹无关。先读 `开发流程/` 和 `memory/`。
+
+## 版本（钉死）
+
+- Minecraft **1.21.11**
+- Fabric Loader **0.19.5**（口语里的 Fabric 0.19.5）
+- Fabric API **0.141.6+1.21.11**
+- Java **21**（1.21.x，不是 26.x 的 Java 25）
+- 仍走 Loom 重映射；不要按 26.x 无混淆官方名写代码
+
+## v1 口径
+
+- 卖：可摆小型方块玩偶 + 可穿时装。家用原版方块。家具后做。
+- 玩偶：纯方块，四向朝向（发射器），戴 Cosmetic Armor 外观头槽。GeckoLib `.geo.json`。
+- 时装：外观四槽，真护甲保留。必装 Trinkets Updated + Cosmetic Armor Updated + CCA。
+- JEI / 玉不是必装，装了信息必须正确。
+- 现有模型在 `模型工程文件/`。名单以 `开发流程/01` 入仓表为准。

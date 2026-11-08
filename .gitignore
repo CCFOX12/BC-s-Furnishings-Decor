@@ -1,0 +1,17 @@
+已删除文件/
+build/
+.gradle/
+run/
+out/
+*.class
+.idea/
+*.iml
+*.ipr
+*.iws
+.DS_Store
+Thumbs.db
+logs/
+crash-reports/
+*.log
+session.lock
+.cursor/*.log

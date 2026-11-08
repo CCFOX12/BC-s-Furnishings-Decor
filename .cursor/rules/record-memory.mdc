@@ -1,0 +1,16 @@
+---
+description: 每轮改动结束前写入本仓库 memory，不要写到其它工作区
+alwaysApply: true
+---
+
+# 改动必须记入 memory
+
+记忆目录只在本仓库：`memory/`。不要写进 `AlloyInfant归档`、`paper服务器`、`Fox's Original Enhancement` 或其它工作区。
+
+只要改了机制、行为、配置、命令、前置版本、开发流程或否决过的方案，**同一轮工作结束前**更新 memory，不要等用户再提醒。
+
+1. 在 `memory/修改记录.md` **追加**一条：日期、改了什么、为什么（不要改写或删旧条目）。
+2. 把对应专题文档改到与现状一致。版本和前置优先改 `memory/项目基线.md`；流程口径改 `开发流程/`。
+3. 新专题就在 `memory/` 新建 md，并在 `memory/README.md` 表格里加一行。
+
+只移动 `已删除文件/`、世界存档、日志、`session.lock` 时可以不记。不要把密钥写进 memory。
