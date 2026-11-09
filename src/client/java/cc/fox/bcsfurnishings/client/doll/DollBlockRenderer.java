@@ -8,5 +8,6 @@ import software.bernie.geckolib.renderer.base.GeoRenderState;
 public class DollBlockRenderer<R extends BlockEntityRenderState & GeoRenderState> extends GeoBlockRenderer<DollBlockEntity, R> {
 	public DollBlockRenderer() {
 		super(new DollBlockGeoModel());
+		withRenderLayer(new AlittleBirdSitGlowLayer<>(this));
 	}
 }

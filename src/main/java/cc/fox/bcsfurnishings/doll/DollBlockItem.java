@@ -70,6 +70,9 @@ public class DollBlockItem extends BlockItem implements GeoItem {
 	) {
 		super.appendHoverText(stack, context, display, tooltip, flag);
 		tooltip.accept(Component.translatable("tooltip.bcs_furnishings.cosmetic_head").withStyle(ChatFormatting.GRAY));
+		if (this.getBlock() instanceof DollBlock doll && doll.isGlowLamp()) {
+			tooltip.accept(Component.translatable("tooltip.bcs_furnishings.glow_lamp").withStyle(ChatFormatting.GRAY));
+		}
 	}
 
 	@Override

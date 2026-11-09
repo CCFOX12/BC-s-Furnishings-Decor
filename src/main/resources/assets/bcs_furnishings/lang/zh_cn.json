@@ -4,6 +4,7 @@
   "tag.item.bcs_furnishings.dolls": "玩偶",
   "jade.bcs_furnishings.cosmetic_head": "可戴外观头槽",
   "tooltip.bcs_furnishings.cosmetic_head": "可戴外观头槽",
+  "tooltip.bcs_furnishings.glow_lamp": "放置后右键开关灯",
   "tooltip.bcs_furnishings.head_generator.op": "仅 OP 可设置",
   "tooltip.bcs_furnishings.head_generator.redstone": "红石弹出正版玩家头颅",
   "block.bcs_furnishings.head_generator": "头颅生成器",

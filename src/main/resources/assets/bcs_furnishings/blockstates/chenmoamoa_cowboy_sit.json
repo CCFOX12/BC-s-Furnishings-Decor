@@ -1,8 +1,12 @@
 {
   "variants": {
-    "facing=north": { "model": "bcs_furnishings:block/chenmoamoa_cowboy_sit" },
-    "facing=south": { "model": "bcs_furnishings:block/chenmoamoa_cowboy_sit" },
-    "facing=west": { "model": "bcs_furnishings:block/chenmoamoa_cowboy_sit" },
-    "facing=east": { "model": "bcs_furnishings:block/chenmoamoa_cowboy_sit" }
+    "facing=north,lit=false": { "model": "bcs_furnishings:block/chenmoamoa_cowboy_sit" },
+    "facing=north,lit=true": { "model": "bcs_furnishings:block/chenmoamoa_cowboy_sit" },
+    "facing=south,lit=false": { "model": "bcs_furnishings:block/chenmoamoa_cowboy_sit" },
+    "facing=south,lit=true": { "model": "bcs_furnishings:block/chenmoamoa_cowboy_sit" },
+    "facing=west,lit=false": { "model": "bcs_furnishings:block/chenmoamoa_cowboy_sit" },
+    "facing=west,lit=true": { "model": "bcs_furnishings:block/chenmoamoa_cowboy_sit" },
+    "facing=east,lit=false": { "model": "bcs_furnishings:block/chenmoamoa_cowboy_sit" },
+    "facing=east,lit=true": { "model": "bcs_furnishings:block/chenmoamoa_cowboy_sit" }
   }
 }

@@ -1,8 +1,12 @@
 {
   "variants": {
-    "facing=north": { "model": "bcs_furnishings:block/aabo_duck_sit_2" },
-    "facing=south": { "model": "bcs_furnishings:block/aabo_duck_sit_2" },
-    "facing=west": { "model": "bcs_furnishings:block/aabo_duck_sit_2" },
-    "facing=east": { "model": "bcs_furnishings:block/aabo_duck_sit_2" }
+    "facing=north,lit=false": { "model": "bcs_furnishings:block/aabo_duck_sit_2" },
+    "facing=north,lit=true": { "model": "bcs_furnishings:block/aabo_duck_sit_2" },
+    "facing=south,lit=false": { "model": "bcs_furnishings:block/aabo_duck_sit_2" },
+    "facing=south,lit=true": { "model": "bcs_furnishings:block/aabo_duck_sit_2" },
+    "facing=west,lit=false": { "model": "bcs_furnishings:block/aabo_duck_sit_2" },
+    "facing=west,lit=true": { "model": "bcs_furnishings:block/aabo_duck_sit_2" },
+    "facing=east,lit=false": { "model": "bcs_furnishings:block/aabo_duck_sit_2" },
+    "facing=east,lit=true": { "model": "bcs_furnishings:block/aabo_duck_sit_2" }
   }
 }

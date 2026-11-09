@@ -4,6 +4,7 @@
   "tag.item.bcs_furnishings.dolls": "Dolls",
   "jade.bcs_furnishings.cosmetic_head": "Wearable in the cosmetic head slot",
   "tooltip.bcs_furnishings.cosmetic_head": "Wearable in the cosmetic head slot",
+  "tooltip.bcs_furnishings.glow_lamp": "Right-click when placed to toggle the light",
   "tooltip.bcs_furnishings.head_generator.op": "Operators only",
   "tooltip.bcs_furnishings.head_generator.redstone": "Redstone ejects a Java Edition player head",
   "block.bcs_furnishings.head_generator": "Head Generator",

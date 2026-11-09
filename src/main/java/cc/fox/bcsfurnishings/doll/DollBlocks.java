@@ -38,6 +38,8 @@ public final class DollBlocks {
 		List<Block> registeredBlocks = new ArrayList<>();
 		for (DollEntry entry : DollCatalog.ENTRIES) {
 			ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, entry.identifier());
+			boolean glowLamp = DollBlock.GLOW_LAMP_ID.equals(entry.id());
+			int litLight = glowLamp ? DollBlock.GLOW_LAMP_LIGHT : 0;
 			DollBlock block = Registry.register(BuiltInRegistries.BLOCK, blockKey, new DollBlock(
 					BlockBehaviour.Properties.of()
 							.setId(blockKey)
@@ -45,9 +47,11 @@ public final class DollBlocks {
 							.sound(SoundType.WOOL)
 							.strength(0.8F)
 							.noOcclusion()
+							.lightLevel(state -> state.getValue(DollBlock.LIT) ? litLight : 0)
 							.pushReaction(PushReaction.BLOCK)
 							.isSuffocating((state, getter, pos) -> false)
-							.isViewBlocking((state, getter, pos) -> false)
+							.isViewBlocking((state, getter, pos) -> false),
+					glowLamp
 			));
 			ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, entry.identifier());
 			DollBlockItem item = Registry.register(BuiltInRegistries.ITEM, itemKey, new DollBlockItem(block, new Item.Properties()
