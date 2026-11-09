@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "bcs_furnishings:block/topiseanotfound_sit" },
+    "facing=south": { "model": "bcs_furnishings:block/topiseanotfound_sit" },
+    "facing=west": { "model": "bcs_furnishings:block/topiseanotfound_sit" },
+    "facing=east": { "model": "bcs_furnishings:block/topiseanotfound_sit" }
+  }
+}

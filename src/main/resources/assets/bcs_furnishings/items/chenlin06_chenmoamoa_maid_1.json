@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "bcs_furnishings:item/chenlin06_chenmoamoa_maid_1",
+    "model": {
+      "type": "geckolib:geckolib"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "bcs_furnishings:block/aabo_duck_sit_nl" },
+    "facing=south": { "model": "bcs_furnishings:block/aabo_duck_sit_nl" },
+    "facing=west": { "model": "bcs_furnishings:block/aabo_duck_sit_nl" },
+    "facing=east": { "model": "bcs_furnishings:block/aabo_duck_sit_nl" }
+  }
+}

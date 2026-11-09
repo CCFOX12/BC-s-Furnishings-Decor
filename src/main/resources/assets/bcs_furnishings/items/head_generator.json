@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "bcs_furnishings:block/head_generator"
+  }
+}

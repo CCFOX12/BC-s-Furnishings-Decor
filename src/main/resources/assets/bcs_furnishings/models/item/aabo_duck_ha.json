@@ -1,0 +1,6 @@
+{
+  "parent": "bcs_furnishings:item/doll_item",
+  "textures": {
+    "particle": "bcs_furnishings:block/aabo_duck_ha"
+  }
+}

@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "cc.fox.bcsfurnishings.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ArmorSlotMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,triggered=false": { "model": "bcs_furnishings:block/head_generator" },
+    "facing=north,triggered=true": { "model": "bcs_furnishings:block/head_generator" },
+    "facing=south,triggered=false": { "model": "bcs_furnishings:block/head_generator", "y": 180 },
+    "facing=south,triggered=true": { "model": "bcs_furnishings:block/head_generator", "y": 180 },
+    "facing=west,triggered=false": { "model": "bcs_furnishings:block/head_generator", "y": 270 },
+    "facing=west,triggered=true": { "model": "bcs_furnishings:block/head_generator", "y": 270 },
+    "facing=east,triggered=false": { "model": "bcs_furnishings:block/head_generator", "y": 90 },
+    "facing=east,triggered=true": { "model": "bcs_furnishings:block/head_generator", "y": 90 }
+  }
+}

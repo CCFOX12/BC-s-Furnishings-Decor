@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "bcs_furnishings:item/aabo_duck_ha",
+    "model": {
+      "type": "geckolib:geckolib"
+    }
+  }
+}

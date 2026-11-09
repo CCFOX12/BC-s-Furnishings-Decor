@@ -1,0 +1,29 @@
+{
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.import.gradle.enabled": true,
+  "java.import.gradle.wrapper.enabled": true,
+  "java.import.gradle.java.home": "C:\\Program Files\\Java\\jdk-25.0.2",
+  "java.jdt.ls.java.home": "C:\\Program Files\\Java\\jdk-21.0.12",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-21",
+      "path": "C:\\Program Files\\Java\\jdk-21.0.12",
+      "default": true
+    }
+  ],
+  "java.compile.nullAnalysis.mode": "automatic",
+  "java.debug.settings.shortenCommandLine": "argfile",
+  "java.debug.settings.onBuildFailureProceed": true,
+  "files.exclude": {
+    "**/.gradle": true,
+    "**/build": true,
+    "**/run": true,
+    "**/已删除文件": true
+  },
+  "search.exclude": {
+    "**/.gradle": true,
+    "**/build": true,
+    "**/run": true,
+    "**/已删除文件": true
+  }
+}

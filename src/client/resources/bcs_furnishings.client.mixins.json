@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "cc.fox.bcsfurnishings.client.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"AvatarRendererMixin",
+		"LivingEntityRendererMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

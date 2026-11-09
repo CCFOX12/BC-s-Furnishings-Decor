@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "bcs_furnishings:block/sjs15612075998_sit" },
+    "facing=south": { "model": "bcs_furnishings:block/sjs15612075998_sit" },
+    "facing=west": { "model": "bcs_furnishings:block/sjs15612075998_sit" },
+    "facing=east": { "model": "bcs_furnishings:block/sjs15612075998_sit" }
+  }
+}

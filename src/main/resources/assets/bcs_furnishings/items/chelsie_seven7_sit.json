@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "bcs_furnishings:item/chelsie_seven7_sit",
+    "model": {
+      "type": "geckolib:geckolib"
+    }
+  }
+}

@@ -7,6 +7,8 @@ alwaysApply: true
 
 独立 Fabric 内容模组，和工作区里其它文件夹无关。先读 `开发流程/` 和 `memory/`。
 
+**铁律：** 不准真实删除。用户说删也是挪到 `已删除文件/`。细则：`no-real-delete.mdc`。
+
 ## 版本（钉死）
 
 - Minecraft **1.21.11**
@@ -22,3 +24,8 @@ alwaysApply: true
 - 时装：外观四槽，真护甲保留。必装 Trinkets Updated + Cosmetic Armor Updated + CCA。
 - JEI / 玉不是必装，装了信息必须正确。
 - 现有模型在 `模型工程文件/`。名单以 `开发流程/01` 入仓表为准。
+
+## 工程
+
+- Fabric 工程已经在本文件夹。模组 id `bcs_furnishings`，包名 `cc.fox.bcsfurnishings`。
+- 启动：Cursor 里 **F5**（Minecraft Client），或 `.\gradlew.ps1 runClient`。细节见 `memory/开发环境.md`。

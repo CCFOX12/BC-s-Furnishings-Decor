@@ -1,0 +1,6 @@
+{
+  "parent": "bcs_furnishings:item/doll_item",
+  "textures": {
+    "particle": "bcs_furnishings:block/mumu___123_sit"
+  }
+}

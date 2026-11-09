@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "bcs_furnishings:item/topiseanotfound_sp",
+    "model": {
+      "type": "geckolib:geckolib"
+    }
+  }
+}

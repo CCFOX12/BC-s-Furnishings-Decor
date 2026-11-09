@@ -1,18 +1,30 @@
 ---
-description: 禁止真实删除；把文件挪到已删除文件，让项目读不到
+description: 铁律：禁止真实删除。用户说删也是挪到已删除文件，没有下不为例
 alwaysApply: true
 ---
 
-# 禁止真实删除
+# 铁律：禁止真实删除
 
-永远不要执行真实删除。不要使用 Delete 工具，也不要运行 `Remove-Item`、`rm`、`del`、`rd`、`rmdir`、`unlink`、`git clean`、`git rm`（会删工作区文件）。
+本仓库**不准真实删除**。这不是建议，不能用「只删一下」「清缓存」「用户说了删」当借口。
 
-需要让项目“读不到”某个文件或目录时：
+用户说「删掉」「去掉」「清掉」「不要这个了」，一律理解成：**挪到 `已删除文件/`，原路径消失，文件还在。**
 
-1. 使用该工作区根目录下的 `已删除文件/`（没有就创建）。
-2. 用**移动**保留相对路径：`已删除文件/<原相对路径>`。
+## 禁止
+
+- Cursor 的 Delete 工具
+- `Remove-Item`、`rm`、`del`、`rd`、`rmdir`、`unlink`
+- `git clean`、`git rm`（会删工作区文件）
+- 清空、覆盖、格式化 `已删除文件/`
+- 删正在跑的游戏世界、`session.lock`（要挪就按下面的办法挪，不要抹掉）
+
+需要「项目读不到」时，只准 **Move-Item**。
+
+## 怎么挪
+
+1. 工作区根目录下的 `已删除文件/`（没有就创建）。
+2. 保留相对路径：`已删除文件/<原相对路径>`。
 3. 目标已存在时，在文件名后追加 `yyyyMMdd-HHmmss` 再移动。
-4. 移动后确认原路径已不存在。`已删除文件/` 已被 `.cursorignore` 忽略，不要去读里面的内容。
+4. 移动后确认原路径已不存在。`已删除文件/` 已被 `.cursorignore` 忽略。工作区侧栏另有一个根「已删除文件」给人看；**代理不要主动翻里面的内容。**
 
 ```powershell
 $root = "<workspace-root>"
@@ -24,4 +36,6 @@ if (Test-Path -LiteralPath $dest) { $dest = "$dest." + (Get-Date -Format "yyyyMM
 Move-Item -LiteralPath $src -Destination $dest
 ```
 
-例外：Gradle 清理构建目录 `build/` 可以。不要清空 `已删除文件`。不要删除正在运行的游戏世界文件。
+## 唯一例外
+
+Gradle 清理构建目录 `build/` 可以（`.\gradlew.ps1 clean` 或等价）。`target/` 同理。这不构成「别的目录也可以真删」。

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "bcs_furnishings:block/group_photo" },
+    "facing=south": { "model": "bcs_furnishings:block/group_photo" },
+    "facing=west": { "model": "bcs_furnishings:block/group_photo" },
+    "facing=east": { "model": "bcs_furnishings:block/group_photo" }
+  }
+}

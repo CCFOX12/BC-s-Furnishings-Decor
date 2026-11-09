@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        { "condition": "minecraft:survives_explosion" }
+      ],
+      "entries": [
+        { "type": "minecraft:item", "name": "bcs_furnishings:wsogee_m_duck_sp" }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "bcs_furnishings:blocks/wsogee_m_duck_sp"
+}

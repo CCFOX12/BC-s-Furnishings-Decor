@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "bcs_furnishings:block/chenmoamoa_cs" },
+    "facing=south": { "model": "bcs_furnishings:block/chenmoamoa_cs" },
+    "facing=west": { "model": "bcs_furnishings:block/chenmoamoa_cs" },
+    "facing=east": { "model": "bcs_furnishings:block/chenmoamoa_cs" }
+  }
+}

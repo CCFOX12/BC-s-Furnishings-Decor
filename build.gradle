@@ -1,0 +1,160 @@
+plugins {
+	id 'net.fabricmc.fabric-loom-remap' version "${loom_version}"
+	id 'eclipse'
+	id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+repositories {
+	maven {
+		name = 'GeckoLib'
+		url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+		content {
+			includeGroup 'software.bernie.geckolib'
+			includeGroup 'com.geckolib'
+		}
+	}
+	maven {
+		name = 'Ladysnake'
+		url = 'https://maven.ladysnake.org/releases'
+		content {
+			includeGroup 'org.ladysnake.cardinal-components-api'
+		}
+	}
+	maven {
+		name = 'Modrinth'
+		url = 'https://api.modrinth.com/maven'
+		content {
+			includeGroup 'maven.modrinth'
+		}
+	}
+	maven {
+		name = 'CurseMaven'
+		url = 'https://cursemaven.com'
+		content {
+			includeGroup 'curse.maven'
+		}
+	}
+	maven {
+		name = 'BlameJared'
+		url = 'https://maven.blamejared.com/'
+		content {
+			includeGroup 'mezz.jei'
+			includeGroup 'net.mezzdev.config'
+		}
+	}
+	maven {
+		name = 'TerraformersMC'
+		url = 'https://maven.terraformersmc.com/releases/'
+		content {
+			includeGroup 'com.terraformersmc'
+		}
+	}
+}
+
+loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		"bcs_furnishings" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings loom.officialMojangMappings()
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	modImplementation "software.bernie.geckolib:geckolib-fabric-${project.minecraft_version}:${project.geckolib_version}"
+	modImplementation "maven.modrinth:trinkets-updated:${project.trinkets_version}"
+	modImplementation "curse.maven:cosmetic-armor-updated-1465774:${project.cosmetic_armor_file}"
+	modImplementation "org.ladysnake.cardinal-components-api:cardinal-components-api:${project.cca_version}"
+
+	// 开发机验收：进 runClient / F5 的运行时，不写进玩家 depends
+	modRuntimeOnly "mezz.jei:jei-1.21.11-fabric:${project.jei_version}"
+	modRuntimeOnly "net.mezzdev.config:mezz_config-1.21.11-fabric:${project.mezz_config_version}"
+	modCompileOnly "maven.modrinth:jade:${project.jade_version}"
+	modRuntimeOnly "maven.modrinth:jade:${project.jade_version}"
+	modRuntimeOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
+	modRuntimeOnly "maven.modrinth:sodium:${project.sodium_version}"
+	modRuntimeOnly "maven.modrinth:iris:${project.iris_version}"
+	modRuntimeOnly files("libs/IMBlocker-6.2.2-fabric+1.21.9-1.21.11.jar")
+}
+
+// Loom 重映射不会把 Iris 的 JIJ 挂上 classpath，启用光影会 NoClassDefFoundError: PreprocessorListener
+def irisNativeJars = files(
+		"libs/iris-jars/jcpp-1.4.14.jar",
+		"libs/iris-jars/glsl-transformer-3.0.0-pre3.jar",
+		"libs/iris-jars/antlr4-runtime-4.13.1.jar"
+)
+sourceSets.main.runtimeClasspath += irisNativeJars
+sourceSets.client.runtimeClasspath += irisNativeJars
+
+def photonPack = file('libs/shaderpacks/photon_v1.4.zip')
+tasks.register('prepareClientTestAssets', Copy) {
+	from photonPack
+	into layout.projectDirectory.dir('run/shaderpacks')
+	onlyIf { photonPack.exists() }
+}
+
+tasks.named('runClient') {
+	dependsOn 'prepareClientTestAssets'
+	classpath.from irisNativeJars
+}
+
+processResources {
+	def version = project.version
+	inputs.property 'version', version
+
+	filesMatching('fabric.mod.json') {
+		expand 'version': version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 21
+	it.options.encoding = 'UTF-8'
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+	withSourcesJar()
+}
+
+eclipse {
+	classpath {
+		downloadSources = true
+	}
+}
+
+jar {
+	def projectName = project.name
+	inputs.property 'projectName', projectName
+
+	from('LICENSE') {
+		rename { "${it}_${projectName}" }
+	}
+}
+
+publishing {
+	publications {
+		create('mavenJava', MavenPublication) {
+			from components.java
+		}
+	}
+
+	repositories {
+	}
+}

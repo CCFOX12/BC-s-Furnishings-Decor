@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "bcs_furnishings:item/chenmoamoa_sit",
+    "model": {
+      "type": "geckolib:geckolib"
+    }
+  }
+}

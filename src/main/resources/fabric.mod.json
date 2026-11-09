@@ -1,0 +1,49 @@
+{
+	"schemaVersion": 1,
+	"id": "bcs_furnishings",
+	"version": "${version}",
+	"name": "BC's Furnishings & Decor",
+	"description": "Place small block dolls and wear cosmetic outfits. Furniture comes later.",
+	"authors": [
+		"leyang chen"
+	],
+	"contact": {
+		"sources": "https://github.com/CCFOX12/BC-s-Furnishings-Decor",
+		"issues": "https://github.com/CCFOX12/BC-s-Furnishings-Decor/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/bcs_furnishings/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"cc.fox.bcsfurnishings.BcsFurnishings"
+		],
+		"client": [
+			"cc.fox.bcsfurnishings.client.BcsFurnishingsClient"
+		],
+		"jade": [
+			"cc.fox.bcsfurnishings.jade.BcsFurnishingsJadePlugin"
+		]
+	},
+	"mixins": [
+		"bcs_furnishings.mixins.json",
+		{
+			"config": "bcs_furnishings.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": ">=0.141.6",
+		"geckolib": ">=5.4.5",
+		"trinkets": "*",
+		"cosmeticarmor": "*"
+	},
+	"suggests": {
+		"modmenu": "*",
+		"jei": "*",
+		"jade": "*"
+	}
+}

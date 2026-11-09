@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "bcs_furnishings:block/xlt__coin_dinosaur_sp" },
+    "facing=south": { "model": "bcs_furnishings:block/xlt__coin_dinosaur_sp" },
+    "facing=west": { "model": "bcs_furnishings:block/xlt__coin_dinosaur_sp" },
+    "facing=east": { "model": "bcs_furnishings:block/xlt__coin_dinosaur_sp" }
+  }
+}
