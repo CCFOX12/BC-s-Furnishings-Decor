@@ -1,7 +1,7 @@
 {
   "model": {
     "type": "minecraft:special",
-    "base": "bcs_furnishings:item/chenmoamoa_cs",
+    "base": "bcs_furnishings:item/chenmoamoa_cs_xd",
     "model": {
       "type": "geckolib:geckolib"
     }

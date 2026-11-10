@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " C ",
+    "JHG",
+    "ABB"
+  ],
+  "key": {
+    "C": "minecraft:honeycomb_block",
+    "J": "minecraft:jack_o_lantern",
+    "H": { "fabric:type": "bcs_furnishings:player_head", "name": "AaBo_duck" },
+    "G": "minecraft:gold_ingot",
+    "A": "minecraft:amethyst_shard",
+    "B": "minecraft:black_wool"
+  },
+  "result": { "id": "bcs_furnishings:aabo_duck_ha" }
+}

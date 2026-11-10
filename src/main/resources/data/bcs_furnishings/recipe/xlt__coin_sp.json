@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "FH ",
+    "XRB",
+    " WC"
+  ],
+  "key": {
+    "F": "minecraft:cooked_cod",
+    "H": { "fabric:type": "bcs_furnishings:player_head", "name": "XLT__Coin" },
+    "X": "minecraft:orange_concrete",
+    "R": "minecraft:redstone_block",
+    "B": "minecraft:black_wool",
+    "W": "minecraft:white_concrete",
+    "C": "minecraft:golden_carrot"
+  },
+  "result": { "id": "bcs_furnishings:xlt__coin_sp" }
+}

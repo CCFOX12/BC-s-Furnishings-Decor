@@ -1,7 +1,7 @@
 {
   "model": {
     "type": "minecraft:special",
-    "base": "bcs_furnishings:item/group_photo",
+    "base": "bcs_furnishings:item/group_photo_xd",
     "model": {
       "type": "geckolib:geckolib"
     }

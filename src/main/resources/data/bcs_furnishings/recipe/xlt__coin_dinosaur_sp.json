@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "NH ",
+    "MSM",
+    " MC"
+  ],
+  "key": {
+    "N": "minecraft:bone",
+    "H": { "fabric:type": "bcs_furnishings:player_head", "name": "XLT__Coin" },
+    "M": "minecraft:moss_block",
+    "S": "minecraft:slime_block",
+    "C": "minecraft:golden_carrot"
+  },
+  "result": { "id": "bcs_furnishings:xlt__coin_dinosaur_sp" }
+}

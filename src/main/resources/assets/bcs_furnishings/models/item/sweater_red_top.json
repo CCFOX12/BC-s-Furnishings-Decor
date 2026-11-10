@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "bcs_furnishings:item/sweater_red_top"
+  }
+}

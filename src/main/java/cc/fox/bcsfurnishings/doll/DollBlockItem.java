@@ -5,8 +5,6 @@ import dev.emi.trinkets.api.TrinketsApi;
 import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.function.Consumer;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -15,8 +13,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.Level;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.client.GeoRenderProvider;
@@ -58,21 +54,6 @@ public class DollBlockItem extends BlockItem implements GeoItem {
 		}
 		level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.WOOL_PLACE, SoundSource.PLAYERS, 1.0F, 1.0F);
 		return InteractionResult.SUCCESS;
-	}
-
-	@Override
-	public void appendHoverText(
-			ItemStack stack,
-			TooltipContext context,
-			TooltipDisplay display,
-			Consumer<Component> tooltip,
-			TooltipFlag flag
-	) {
-		super.appendHoverText(stack, context, display, tooltip, flag);
-		tooltip.accept(Component.translatable("tooltip.bcs_furnishings.cosmetic_head").withStyle(ChatFormatting.GRAY));
-		if (this.getBlock() instanceof DollBlock doll && doll.isGlowLamp()) {
-			tooltip.accept(Component.translatable("tooltip.bcs_furnishings.glow_lamp").withStyle(ChatFormatting.GRAY));
-		}
 	}
 
 	@Override

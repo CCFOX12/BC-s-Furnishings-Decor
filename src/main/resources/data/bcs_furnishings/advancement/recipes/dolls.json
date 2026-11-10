@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_player_head": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": "minecraft:player_head" }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["has_player_head"]
+  ],
+  "rewards": {
+    "recipes": [
+      "bcs_furnishings:aabo_duck_ha",
+      "bcs_furnishings:aabo_duck_sit",
+      "bcs_furnishings:aabo_duck_sit_2",
+      "bcs_furnishings:aabo_duck_sit_nl",
+      "bcs_furnishings:aabo_duck_sp",
+      "bcs_furnishings:wsogee_m_sit",
+      "bcs_furnishings:wsogee_m_duck_sp",
+      "bcs_furnishings:xlt__coin_sit",
+      "bcs_furnishings:xlt__coin_sp",
+      "bcs_furnishings:xlt__coin_dinosaur_sit",
+      "bcs_furnishings:xlt__coin_dinosaur_sp",
+      "bcs_furnishings:topiseanotfound_sit",
+      "bcs_furnishings:topiseanotfound_sp"
+    ]
+  }
+}

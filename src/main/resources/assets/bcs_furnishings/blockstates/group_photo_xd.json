@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,lit=false": { "model": "bcs_furnishings:block/group_photo_xd" },
+    "facing=north,lit=true": { "model": "bcs_furnishings:block/group_photo_xd" },
+    "facing=south,lit=false": { "model": "bcs_furnishings:block/group_photo_xd" },
+    "facing=south,lit=true": { "model": "bcs_furnishings:block/group_photo_xd" },
+    "facing=west,lit=false": { "model": "bcs_furnishings:block/group_photo_xd" },
+    "facing=west,lit=true": { "model": "bcs_furnishings:block/group_photo_xd" },
+    "facing=east,lit=false": { "model": "bcs_furnishings:block/group_photo_xd" },
+    "facing=east,lit=true": { "model": "bcs_furnishings:block/group_photo_xd" }
+  }
+}

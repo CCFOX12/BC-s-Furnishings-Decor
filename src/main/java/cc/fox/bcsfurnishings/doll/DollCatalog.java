@@ -24,7 +24,7 @@ public final class DollCatalog {
 			entry("CHENLIN06", "CHENLIN06_maid_sit"),
 			entry("CHENLIN06", "CHENLIN06_sit"),
 			entry("chenmoamoa", "chenmoamoa_cowboy_sit"),
-			entry("chenmoamoa", "chenmoamoa_cs"),
+			entry("chenmoamoa", "chenmoamoa_cs_xd"),
 			entry("chenmoamoa", "chenmoamoa_maid_sit"),
 			entry("chenmoamoa", "chenmoamoa_nl_sit"),
 			entry("chenmoamoa", "chenmoamoa_sit"),
@@ -48,7 +48,7 @@ public final class DollCatalog {
 			entry("XLT__Coin", "XLT__Coin_sp"),
 			entry("YouHane23", "YouHane23_sit"),
 			entry("Zebb520", "Zebb520_sit"),
-			entry("大拼图", "group_photo")
+			entry("大拼图", "group_photo_xd")
 	);
 
 	private DollCatalog() {

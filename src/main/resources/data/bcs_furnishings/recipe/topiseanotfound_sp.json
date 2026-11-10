@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "SKD",
+    "LAL",
+    "W W"
+  ],
+  "key": {
+    "S": "minecraft:sunflower",
+    "K": { "fabric:type": "bcs_furnishings:player_head", "name": "TopiseaNotFound" },
+    "D": "minecraft:dandelion",
+    "L": "minecraft:oak_log",
+    "A": "minecraft:leather_horse_armor",
+    "W": "minecraft:wildflowers"
+  },
+  "result": { "id": "bcs_furnishings:topiseanotfound_sp" }
+}

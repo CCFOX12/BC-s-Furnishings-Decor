@@ -7,10 +7,10 @@
         { "condition": "minecraft:survives_explosion" }
       ],
       "entries": [
-        { "type": "minecraft:item", "name": "bcs_furnishings:group_photo" }
+        { "type": "minecraft:item", "name": "bcs_furnishings:chenmoamoa_cs_xd" }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "bcs_furnishings:blocks/group_photo"
+  "random_sequence": "bcs_furnishings:blocks/chenmoamoa_cs_xd"
 }

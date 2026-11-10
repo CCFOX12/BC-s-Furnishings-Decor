@@ -1,7 +1,9 @@
 package cc.fox.bcsfurnishings.client.mixin;
 
 import cc.fox.bcsfurnishings.client.doll.DollClientData;
+import cc.fox.bcsfurnishings.client.fashion.FashionSkinCache;
 import cc.fox.bcsfurnishings.doll.DollTags;
+import cc.fox.bcsfurnishings.fashion.FashionTags;
 import io.github.apace100.cosmetic_armor.CosmeticArmor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -31,14 +33,17 @@ public class AvatarRendererMixin {
 			state.setData(DollClientData.HIDE_HEAD_DOLL, Boolean.TRUE);
 		}
 		ItemStack cosmetic = CosmeticArmor.getCosmeticArmor(entity, EquipmentSlot.HEAD);
-		if (!cosmetic.is(DollTags.ITEMS)) {
-			return;
+		if (cosmetic.is(DollTags.ITEMS)) {
+			state.setData(DollClientData.HEAD_DOLL, cosmetic.copy());
+			ItemStackRenderState dollState = new ItemStackRenderState();
+			minecraft.getItemModelResolver().updateForLiving(dollState, cosmetic, ItemDisplayContext.HEAD, entity);
+			state.setData(DollClientData.HEAD_DOLL_STATE, dollState);
+			state.headItem.clear();
+			state.wornHeadType = null;
+		} else if (cosmetic.is(FashionTags.ITEMS)) {
+			state.headItem.clear();
+			state.wornHeadType = null;
 		}
-		state.setData(DollClientData.HEAD_DOLL, cosmetic.copy());
-		ItemStackRenderState dollState = new ItemStackRenderState();
-		minecraft.getItemModelResolver().updateForLiving(dollState, cosmetic, ItemDisplayContext.HEAD, entity);
-		state.setData(DollClientData.HEAD_DOLL_STATE, dollState);
-		state.headItem.clear();
-		state.wornHeadType = null;
+		FashionSkinCache.apply(entity, state);
 	}
 }

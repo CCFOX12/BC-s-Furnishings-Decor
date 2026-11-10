@@ -1,6 +1,7 @@
 package cc.fox.bcsfurnishings.mixin;
 
 import cc.fox.bcsfurnishings.doll.DollTags;
+import cc.fox.bcsfurnishings.fashion.FashionTags;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -11,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class ArmorSlotMixin {
 	@Inject(method = "mayPlace", at = @At("HEAD"), cancellable = true)
 	private void bcsfurnishings$rejectDolls(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-		if (stack.is(DollTags.ITEMS)) {
+		if (stack.is(DollTags.ITEMS) || stack.is(FashionTags.ITEMS)) {
 			cir.setReturnValue(false);
 		}
 	}

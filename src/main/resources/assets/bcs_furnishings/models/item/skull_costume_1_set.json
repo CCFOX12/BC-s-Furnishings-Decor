@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "bcs_furnishings:item/skull_costume_1_set"
+  }
+}

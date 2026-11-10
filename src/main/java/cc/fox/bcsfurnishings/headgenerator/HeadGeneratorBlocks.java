@@ -1,11 +1,14 @@
 package cc.fox.bcsfurnishings.headgenerator;
 
 import cc.fox.bcsfurnishings.BcsFurnishings;
+import java.util.List;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -13,6 +16,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -25,6 +29,10 @@ public final class HeadGeneratorBlocks {
 	public static HeadGeneratorBlock BLOCK;
 	public static HeadGeneratorBlockItem ITEM;
 	public static BlockEntityType<HeadGeneratorBlockEntity> BLOCK_ENTITY;
+	private static final List<Component> HEAD_GENERATOR_LORE = List.of(
+			Component.translatable("tooltip.bcs_furnishings.head_generator.op").withStyle(ChatFormatting.GRAY),
+			Component.translatable("tooltip.bcs_furnishings.head_generator.redstone").withStyle(ChatFormatting.GRAY)
+	);
 
 	private HeadGeneratorBlocks() {
 	}
@@ -45,6 +53,7 @@ public final class HeadGeneratorBlocks {
 				.setId(itemKey)
 				.useBlockDescriptionPrefix()
 				.stacksTo(64)
+				.component(DataComponents.LORE, new ItemLore(HEAD_GENERATOR_LORE, HEAD_GENERATOR_LORE))
 		));
 		BLOCK_ENTITY = Registry.register(
 				BuiltInRegistries.BLOCK_ENTITY_TYPE,

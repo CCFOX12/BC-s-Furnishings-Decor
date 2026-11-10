@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " C ",
+    "YHY",
+    "ABG"
+  ],
+  "key": {
+    "C": "minecraft:honeycomb_block",
+    "Y": "minecraft:hay_block",
+    "H": { "fabric:type": "bcs_furnishings:player_head", "name": "AaBo_duck" },
+    "A": "minecraft:amethyst_shard",
+    "B": "minecraft:black_wool",
+    "G": "minecraft:gold_ingot"
+  },
+  "result": { "id": "bcs_furnishings:aabo_duck_sit_nl" }
+}

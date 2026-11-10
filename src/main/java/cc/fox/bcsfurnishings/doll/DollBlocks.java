@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -16,6 +17,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.item.equipment.Equippable;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -54,14 +56,17 @@ public final class DollBlocks {
 					glowLamp
 			));
 			ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, entry.identifier());
-			DollBlockItem item = Registry.register(BuiltInRegistries.ITEM, itemKey, new DollBlockItem(block, new Item.Properties()
+			Item.Properties itemProperties = new Item.Properties()
 					.setId(itemKey)
 					.useBlockDescriptionPrefix()
 					.stacksTo(64)
 					.component(DataComponents.EQUIPPABLE, Equippable.builder(EquipmentSlot.HEAD)
 							.setDamageOnHurt(false)
 							.build())
-			));
+					.component(DataComponents.LORE, glowLamp
+							? grayLore("tooltip.bcs_furnishings.cosmetic_head", "tooltip.bcs_furnishings.glow_lamp")
+							: grayLore("tooltip.bcs_furnishings.cosmetic_head"));
+			DollBlockItem item = Registry.register(BuiltInRegistries.ITEM, itemKey, new DollBlockItem(block, itemProperties));
 			BLOCKS.add(block);
 			ITEMS.add(item);
 			registeredBlocks.add(block);
@@ -90,5 +95,14 @@ public final class DollBlocks {
 
 	public static List<DollBlock> blocks() {
 		return Collections.unmodifiableList(BLOCKS);
+	}
+
+	private static ItemLore grayLore(String... keys) {
+		List<Component> lines = new ArrayList<>(keys.length);
+		for (String key : keys) {
+			lines.add(Component.translatable(key).withStyle(ChatFormatting.GRAY));
+		}
+		List<Component> frozen = List.copyOf(lines);
+		return new ItemLore(frozen, frozen);
 	}
 }

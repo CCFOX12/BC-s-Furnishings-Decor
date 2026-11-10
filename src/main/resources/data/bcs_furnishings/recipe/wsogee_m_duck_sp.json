@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "WG ",
+    "E S",
+    " RD"
+  ],
+  "key": {
+    "W": { "fabric:type": "bcs_furnishings:player_head", "name": "wSogee_M" },
+    "G": "minecraft:gray_concrete",
+    "E": "minecraft:end_rod",
+    "S": "minecraft:stick",
+    "R": "minecraft:redstone",
+    "D": { "fabric:type": "bcs_furnishings:player_head", "name": "AaBo_duck" }
+  },
+  "result": { "id": "bcs_furnishings:wsogee_m_duck_sp" }
+}

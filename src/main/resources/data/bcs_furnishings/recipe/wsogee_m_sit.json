@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "NIN",
+    "RHF",
+    " B "
+  ],
+  "key": {
+    "N": "minecraft:gold_nugget",
+    "I": "minecraft:gold_ingot",
+    "R": { "fabric:type": "bcs_furnishings:firework_rocket", "flight_duration": 3 },
+    "H": { "fabric:type": "bcs_furnishings:player_head", "name": "wSogee_M" },
+    "F": "minecraft:firework_star",
+    "B": "minecraft:redstone_block"
+  },
+  "result": { "id": "bcs_furnishings:wsogee_m_sit" }
+}
